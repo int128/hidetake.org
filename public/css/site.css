@@ -1,0 +1,51 @@
+/* Adding chapter, section and subsection */
+.page    { counter-reset: part; }
+.page h2 { counter-reset: chapter; }
+.page h3 { counter-reset: section; }
+.page h4 { counter-reset: subsection; }
+.page h2:before {
+    content: counter(part) ".";
+    counter-increment: part;
+}
+.page h3:before {
+    content: counter(part) "." counter(chapter) ".";
+    counter-increment: chapter;
+}
+.page h4:before {
+    content: counter(part) "." counter(chapter) "." counter(section) ".";
+    counter-increment: section;
+}
+.page h5:before {
+    content: counter(part) "." counter(chapter) "." counter(section) "." counter(subsection) ".";
+    counter-increment: subsection;
+}
+.page h2:before,
+.page h3:before,
+.page h4:before,
+.page h5:before {
+    margin-right: 0.75rem;
+}
+
+/* Table of Contents */
+.sidebar-nav-item          { counter-reset: part; }
+.sidebar-nav-item.level-h2 { counter-reset: chapter; }
+.sidebar-nav-item.level-h3 { counter-reset: section; }
+.sidebar-nav-item.level-h4 { counter-reset: subsection; }
+.sidebar-nav-item.level-h2:before {
+    content: counter(part) ".";
+    counter-increment: part;
+}
+.sidebar-nav-item.level-h3:before {
+    content: counter(part) "." counter(chapter) ".";
+    counter-increment: chapter;
+}
+.sidebar-nav-item.level-h2:before,
+.sidebar-nav-item.level-h3:before {
+    margin-right: 0.25rem;
+}
+
+.sidebar-nav-item.level-h4,
+.sidebar-nav-item.level-h5,
+.sidebar-nav-item.level-h6 {
+    padding-left: 2.5rem;
+}
