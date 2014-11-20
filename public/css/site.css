@@ -1,11 +1,6 @@
-.navbar {
-  margin-bottom: 0;
-}
-nav + p {
-  display: none;
-}
 .jumbotron {
   background-color: #fff;
+  margin-bottom: 0;
 }
 
 /* Adding chapter, section and subsection */
