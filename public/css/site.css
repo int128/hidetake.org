@@ -5,8 +5,7 @@ nav + p {
   display: none;
 }
 .jumbotron {
-  background-color: #333;
-  color: #fff;
+  background-color: #fff;
 }
 
 /* Adding chapter, section and subsection */
