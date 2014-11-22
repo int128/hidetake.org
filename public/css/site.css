@@ -10,25 +10,10 @@
   box-shadow: #000 0 0 1em inset;
 }
 
-.fixed-background-light p,
-.fixed-background-dark  p {
-  padding-top: 1em;
-  padding-bottom: 1em;
-  padding-left: 1em;
-  padding-right: 1em;
-  margin-left: -1em;
-  margin-right: -1em;
-  border-radius: 1em;
-}
-
 .fixed-background-dark {
   color: #fff;
 }
 
-.fixed-background-light p {
-  background-color: rgba(255, 255, 255, 0.75)
-}
-
-.fixed-background-dark p {
-  background-color: rgba(0, 0, 0, 0.75)
+.panorama {
+  min-height: 480px;
 }
