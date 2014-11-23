@@ -33,22 +33,16 @@ title: Home
       <span v-text="github.languages"></span> in
       <a v-attr="href: github.url"><span v-text="github.repos.length"></span> repositories</a>
     </div>
-    <h3>
-      <a v-attr="href: github.url">
-        GitHub <span v-if="github.loaded">Top <span v-text="github.top"></span></span>
-      </a>
-    </h3>
+    <h3><a v-attr="href: github.url">GitHub Top 5</a></h3>
     <div class="row">
-      <div v-repeat="github.repos | orderBy 'stargazers_count' -1">
-        <div class="col-md-2" v-if="$index < github.top">
-          <div class="thumbnail">
-            <div class="caption">
-              <a v-attr="href: html_url">
-                <span class="badge"><span v-text="stargazers_count"></span> &star;</span>
-              </a>
-              <h4 v-text="name"></h4>
-              <p v-text="description"></p>
-            </div>
+      <div class="col-md-2" v-repeat="github.repos | orderBy 'stargazers_count' -1 | head 5">
+        <div class="thumbnail">
+          <div class="caption">
+            <a v-attr="href: html_url">
+              <span class="badge"><span v-text="stargazers_count"></span> &star;</span>
+            </a>
+            <h4 v-text="name"></h4>
+            <p v-text="description"></p>
           </div>
         </div>
       </div>
@@ -82,6 +76,15 @@ title: Home
 <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/vue/0.11.0/vue.min.js"></script>
 <script>
+Vue.filter('head', function (value, size) {
+  if (value instanceof Array) {
+    return value.slice(0, size);
+  } else {
+    console.warn('argument of head filter must be an array');
+    return value;
+  }
+});
+
 $(function () {
   var metadata = {
     github: 'int128'
@@ -91,7 +94,6 @@ $(function () {
     el: 'body',
     data: {
       github: {
-        top: 5,
         url: 'https://github.com/' + metadata.github,
         loaded: false,
         repos: [],
