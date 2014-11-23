@@ -50,7 +50,7 @@ title: Home
   </div>
 </div>
 
-<div class="jumbotron">
+<div class="jumbotron background-dark">
   <div class="container">
     <h2>Traveller</h2>
     <p>
@@ -59,58 +59,14 @@ title: Home
   </div>
 </div>
 
-<div class="jumbotron panorama fixed-background-dark" style="background-image: url(https://lh4.googleusercontent.com/-X1OKYQFhGys/UkF5z4zzW8I/AAAAAAAAfc4/O7fmiYqZ8Uk/s2048/DSC03800.JPG)">
-  <div class="container">
-    <h3>Zermatt</h3>
-    <p>July 15 2013</p>
-  </div>
-</div>
-
-<div class="jumbotron panorama fixed-background-dark" style="background-image: url(https://lh6.googleusercontent.com/-ilQEJoolMuY/U0ETd3UdMZI/AAAAAAAAff4/EWTVUwcTTtk/s2048/DSC04374.JPG)">
-  <div class="container">
-    <h3>Gare de Strasbourg</h3>
-    <p>September 10 2013</p>
+<div class="background-dark" v-repeat="album.shown">
+  <div class="jumbotron panorama fixed-background" v-style="background-image: content.src | picasaImage">
+    <div class="container">
+      <span v-text="gphoto$timestamp.$t | date"></span>
+    </div>
   </div>
 </div>
 
 <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/vue/0.11.0/vue.min.js"></script>
-<script>
-Vue.filter('head', function (value, size) {
-  if (value instanceof Array) {
-    return value.slice(0, size);
-  } else {
-    console.warn('argument of head filter must be an array');
-    return value;
-  }
-});
-
-$(function () {
-  var metadata = {
-    github: 'int128'
-  };
-
-  var vm = new Vue({
-    el: 'body',
-    data: {
-      github: {
-        url: 'https://github.com/' + metadata.github,
-        loaded: false,
-        repos: [],
-        languages: []
-      }
-    }
-  });
-
-  $.get('https://api.github.com/users/' + metadata.github + '/repos').then(function (repos) {
-    vm.github.loaded = true;
-    vm.github.repos = repos;
-    vm.github.languages = repos.reduce(function (x, y) {
-      if (y.language && x.indexOf(y.language) == -1) {
-        x.push(y.language);
-      }
-      return x;
-    }, []).join(', ');
-  });
-});
-</script>
+<script src="/public/index.js"></script>

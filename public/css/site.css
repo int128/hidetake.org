@@ -3,17 +3,17 @@
   margin-bottom: 0;
 }
 
-.fixed-background-light,
-.fixed-background-dark {
+.fixed-background {
   position: relative;
   background: 50% 50% no-repeat fixed;
   box-shadow: #000 0 0 1em inset;
 }
 
-.fixed-background-dark {
+.background-dark {
   color: #fff;
+  background-color: #000;
 }
 
 .panorama {
-  min-height: 480px;
+  min-height: 600px;
 }
