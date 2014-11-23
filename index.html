@@ -26,14 +26,33 @@ title: Home
 
 <div class="jumbotron">
   <div class="container">
-    <h2>Open Source Developer on <a href="https://github.com/int128">GitHub</a></h2>
-    Keywords:
-    Groovy,
-    Scala,
-    JavaScript,
-    Gradle,
-    App Engine,
-    Docker
+    <h2>Open Source Developer</h2>
+
+    <div v-if="github.loaded">
+      Languages:
+      <span v-text="github.languages"></span> in
+      <a v-attr="href: github.url"><span v-text="github.repos.length"></span> repositories</a>
+    </div>
+    <h3>
+      <a v-attr="href: github.url">
+        GitHub <span v-if="github.loaded">Top <span v-text="github.top"></span></span>
+      </a>
+    </h3>
+    <div class="row">
+      <div v-repeat="github.repos | orderBy 'stargazers_count' -1">
+        <div class="col-md-2" v-if="$index < github.top">
+          <div class="thumbnail">
+            <div class="caption">
+              <a v-attr="href: html_url">
+                <span class="badge"><span v-text="stargazers_count"></span> &star;</span>
+              </a>
+              <h4 v-text="name"></h4>
+              <p v-text="description"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -59,3 +78,37 @@ title: Home
     <p>September 10 2013</p>
   </div>
 </div>
+
+<script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/vue/0.11.0/vue.min.js"></script>
+<script>
+$(function () {
+  var metadata = {
+    github: 'int128'
+  };
+
+  var vm = new Vue({
+    el: 'body',
+    data: {
+      github: {
+        top: 5,
+        url: 'https://github.com/' + metadata.github,
+        loaded: false,
+        repos: [],
+        languages: []
+      }
+    }
+  });
+
+  $.get('https://api.github.com/users/' + metadata.github + '/repos').then(function (repos) {
+    vm.github.loaded = true;
+    vm.github.repos = repos;
+    vm.github.languages = repos.reduce(function (x, y) {
+      if (y.language && x.indexOf(y.language) == -1) {
+        x.push(y.language);
+      }
+      return x;
+    }, []).join(', ');
+  });
+});
+</script>
