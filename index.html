@@ -52,21 +52,31 @@ title: Home
   </div>
 </div>
 
-<div class="jumbotron">
-  <div class="container">
-    <h2>Traveller</h2>
-    <p>
-      Visited 45 prefectures in Japan, and 10 countries in World
-    </p>
+<div class="fixed-background panorama background-1-travel">
+  <div class="jumbotron">
+    <div class="container">
+      <h2>Traveller</h2>
+    </div>
   </div>
 </div>
 
-<div class="background-dark" v-repeat="album.shown">
-  <div class="jumbotron panorama fixed-background" v-style="background-image: content.src | picasaImage">
-    <div class="container">
-      <span v-text="gphoto$timestamp.$t | date"></span>
+<div class="jumbotron">
+  <div class="container">
+    <p>
+      Visited 45 prefectures in Japan, and 10 countries in World
+    </p>
+    <div class="row">
+      <div class="col-xs-6 col-sm-4 col-md-2" v-repeat="album.photos">
+        <div class="thumbnail">
+          <img v-attr="src: content.src | picasaImage" />
+        </div>
+      </div>
     </div>
   </div>
+</div>
+
+<div class="container">
+  <p>&copy; Hidetake Iwata</p>
 </div>
 
 <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>

@@ -10,7 +10,7 @@
 
   Vue.filter('date', function (value) {
     try {
-      return new Date(parseInt(value)).toISOString();
+      return new Date(parseInt(value)).toDateString();
     } catch (e) {
       console.warn('argument of date filter must be a timestamp', value, e);
       return value;
@@ -19,7 +19,7 @@
 
   Vue.filter('picasaImage', function (value) {
     if (typeof(value) == 'string') {
-      return 'url(' + value.replace(/([^/]+)$/, 's1600/$1') + ')';
+      return value.replace(/([^/]+)$/, 's320/$1');
     } else {
       console.warn('argument of picasaImage filter must be a string');
       return value;
@@ -52,19 +52,6 @@
   });
 
   $(function () {
-    var $w = $(window), $d = $(document);
-
-    $w.on('scroll', function () {
-      var height = $d.height();
-      var position = $w.height() + $w.scrollTop();
-      if ((height - position) / height < 0.1) {
-        var photo = vm.album.photos[vm.album.shown.length];
-        if (photo) {
-          vm.album.shown.push(photo);
-        }
-      }
-    });
-
     $.get('https://api.github.com/users/' + metadata.github + '/repos').then(function (repos) {
       vm.github.loaded = true;
       vm.github.repos = repos;
