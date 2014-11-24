@@ -10,39 +10,41 @@ title: Home
   </div>
 </div>
 
-<div class="jumbotron">
-  <div class="container">
-    <h2>Software Engineer</h2>
-    <p>
-      Working for Research and Development of Software Engineering
-    </p>
-    Keywords:
-    Software Architecture,
-    Server and Network Infrastructure,
-    Continuous Delivery,
-    Agile Development
-  </div>
-</div>
-
-<div class="jumbotron">
-  <div class="container">
-    <h2>Open Source Developer</h2>
-
-    <div v-if="github.loaded">
-      Languages:
-      <span v-text="github.languages"></span> in
-      <a v-attr="href: github.url"><span v-text="github.repos.length"></span> repositories</a>
+<div class="fixed-background background-dark background-1-cafe">
+  <div class="jumbotron">
+    <div class="container">
+      <h2>Software Engineer</h2>
+      <p>
+        Working for Research and Development of Software Engineering
+      </p>
+      Keywords:
+      Software Architecture,
+      Server and Network Infrastructure,
+      Continuous Delivery,
+      Agile Development
     </div>
-    <h3><a v-attr="href: github.url">GitHub Top 5</a></h3>
-    <div class="row">
-      <div class="col-md-2" v-repeat="github.repos | orderBy 'stargazers_count' -1 | head 5">
-        <div class="thumbnail">
-          <div class="caption">
-            <a v-attr="href: html_url">
-              <span class="badge"><span v-text="stargazers_count"></span> &star;</span>
-            </a>
-            <h4 v-text="name"></h4>
-            <p v-text="description"></p>
+  </div>
+
+  <div class="jumbotron">
+    <div class="container">
+      <h2>Open Source Developer</h2>
+
+      <div v-if="github.loaded">
+        Languages:
+        <span v-text="github.languages"></span> in
+        <a v-attr="href: github.url"><span v-text="github.repos.length"></span> repositories</a>
+      </div>
+      <h3><a v-attr="href: github.url">GitHub Top 5</a></h3>
+      <div class="row">
+        <div class="col-md-2" v-repeat="github.repos | orderBy 'stargazers_count' -1 | head 5">
+          <div class="thumbnail">
+            <div class="caption">
+              <a v-attr="href: html_url">
+                <span class="badge"><span v-text="stargazers_count"></span> &star;</span>
+              </a>
+              <h4 v-text="name"></h4>
+              <p v-text="description"></p>
+            </div>
           </div>
         </div>
       </div>
@@ -50,7 +52,7 @@ title: Home
   </div>
 </div>
 
-<div class="jumbotron background-dark">
+<div class="jumbotron">
   <div class="container">
     <h2>Traveller</h2>
     <p>
