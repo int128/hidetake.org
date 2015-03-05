@@ -21,7 +21,7 @@ title: Home
   <div class="jumbotron">
     <div class="container">
       <h2>Software Engineer</h2>
-      <a href="https://www.linkedin.com/pub/hidetake-iwata/b1/b11/619">View on LinkedIn</a>
+      <a href="https://www.linkedin.com/pub/hidetake-iwata/b1/b11/619">LinkedIn</a>
     </div>
   </div>
 
@@ -38,13 +38,13 @@ title: Home
       <div class="row">
         <div class="col-md-2" v-repeat="github.repos | orderBy 'stargazers_count' -1 | head 5">
           <div class="thumbnail">
-            <div class="caption">
-              <a v-attr="href: html_url">
+            <a v-attr="href: html_url">
+              <div class="caption">
                 <span class="badge"><span v-text="stargazers_count"></span> &star;</span>
-              </a>
-              <h4 v-text="name"></h4>
-              <p v-text="description"></p>
-            </div>
+                <h4 v-text="name"></h4>
+                <p v-text="description"></p>
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -53,24 +53,22 @@ title: Home
       <div class="row">
         <div class="col-md-3">
           <div class="thumbnail">
-            <div class="caption">
-              <h4>
-                <a href="https://gistnote.github.io">
-                  Gistnote: Evernote like Gist editor app
-                </a>
-              </h4>
-            </div>
+            <a href="https://gistnote.github.io">
+              <div class="caption">
+                <h4>Gistnote</h4>
+                <p>Evernote like Gist editor app</p>
+              </div>
+            </a>
           </div>
         </div>
         <div class="col-md-3">
           <div class="thumbnail">
-            <div class="caption">
-              <h4>
-                <a href="https://chrome.google.com/webstore/detail/feeleilgbmkkpapllljmclmbeddcdeeh">
-                  Bookmarks in New Tab Page (Chrome Extension)
-                </a>
-              </h4>
-            </div>
+            <a href="https://chrome.google.com/webstore/detail/feeleilgbmkkpapllljmclmbeddcdeeh">
+              <div class="caption">
+                <h4>Bookmarks in New Tab Page</h4>
+                <p>Chrome Extension: Replaces the new tab page with tiled bookmarks</p>
+              </div>
+            </a>
           </div>
         </div>
       </div>
