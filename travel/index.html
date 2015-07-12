@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<style>
+body {
+  height: 100%;
+  background-color: #000;
+  background-position: 50% 50%;
+}
+</style>
+
+</head>
+<body>
+
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
+
+var Filter = function () {
+  this.value = 0;
+  this.precision = 10;
+};
+Filter.prototype.calculate = function (newValue) {
+  this.value = Math.floor((this.value * 0.95 + newValue * 0.05) * this.precision) / this.precision;
+  return this.value;
+};
+
+$(function () {
+  var filterx = new Filter();
+  var filtery = new Filter();
+  $(window).bind('devicemotion', function (e) {
+    filterx.calculate(e.originalEvent.accelerationIncludingGravity.x * 10 + 60);
+    filtery.calculate(e.originalEvent.accelerationIncludingGravity.y * -10);
+    $('body').css('background-position', filterx.value + '%' + ' ' + filtery.value + '%');
+  });
+
+  var photos = [
+    '//lh3.googleusercontent.com/-X1OKYQFhGys/UkF5z4zzW8I/AAAAAAAAhQY/ci9486HZj2I/s2048/DSC03800.JPG',
+    '//lh3.googleusercontent.com/-1Jy0bBRbWG8/U0ETcYwOb3I/AAAAAAAAffw/WSIE_rvj53o/s2048/DSC04372.JPG',
+    '//lh3.googleusercontent.com/-imPCOqSxic0/U0LEqr2H7_I/AAAAAAAAfgw/BpgJ3bBtYts/s2048/DSC04936.JPG'
+  ];
+  var photo = photos[Math.floor(photos.length * Math.random())];
+  $('body').css('background-image', 'url(' + photo + ')');
+});
+
+</script>
+
+</body>
+</html>
