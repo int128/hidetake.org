@@ -6,7 +6,6 @@
 .fixed-background {
   position: relative;
   background: 50% 50% no-repeat fixed;
-  box-shadow: #000 0 0 1em inset;
 }
 
 .background-dark {
