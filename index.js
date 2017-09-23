@@ -52,7 +52,7 @@
   });
 
   $(function () {
-    $.get('https://api.github.com/users/' + metadata.github + '/repos').then(function (repos) {
+    $.get('https://api.github.com/users/' + metadata.github + '/repos?sort=updated').then(function (repos) {
       vm.github.loaded = true;
       vm.github.repos = repos;
       vm.github.languages = repos.reduce(function (x, y) {
