@@ -16,5 +16,5 @@ jobs:
             if [ "$CIRCLE_BRANCH" = "master" ]; then
               echo "$GCP_SERVICE_ACCOUNT_KEY" | base64 -d > "$HOME/gcp-service-account-key.json"
               gcloud auth activate-service-account --key-file "$HOME/gcp-service-account-key.json"
-              gcloud app deploy --project "$GCP_PROJECT_ID"
+              gcloud app deploy --project "$GCP_PROJECT_ID" --version "$CIRCLE_BRANCH"
             fi
