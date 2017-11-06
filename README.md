@@ -1,10 +1,8 @@
-# hidetake.org
+# hidetake.org [![CircleCI](https://circleci.com/gh/int128/hidetake.org.svg?style=shield)](https://circleci.com/gh/int128/hidetake.org)
 
-This is my website serving on App Engine.
+## Run and deploy
 
-## How to run and deploy
-
-```
+```sh
 # Install SDK
 gcloud components install app-engine-go
 
@@ -14,3 +12,11 @@ dev_appserver.py app.yaml
 # Deploy
 gcloud app deploy --project=$PROJECT_ID
 ```
+
+## Deploy from CircleCI
+
+Set following environment variables:
+
+- `GCP_PROJECT_ID` - Project ID
+- `GCP_SERVICE_ACCOUNT_KEY` - Result of `base64 -i key.json`
+
