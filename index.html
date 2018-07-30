@@ -4,105 +4,30 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <title>Hidetake Iwata</title>
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/cosmo/bootstrap.min.css"/>
+  <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootswatch/4.1.2/cosmo/bootstrap.min.css"/>
   <link rel="stylesheet" href="/index.css">
 </head>
 <body>
 
-<div class="jumbotron">
-  <div class="container text-center">
-    <div class="avatar-circle"></div>
-    <h1>Hidetake Iwata</h1>
-    <div>岩田 英丈</div>
-  </div>
-</div>
-
-<div class="fixed-background background-dark background-1-cafe">
-  <div class="jumbotron">
-    <div class="container text-center">
-      <h2>Software Engineer</h2>
-      Specialities: Software Architecture, Developer Productivity, Agile, Continuous Integration/Delivery and Performance Test.
-      <br/>
-      <br/>
-      <a class="btn btn-default" href="https://www.linkedin.com/pub/hidetake-iwata/b1/b11/619">LinkedIn</a>
-
-      <h2>Open Source Developer</h2>
-      <div v-if="github.loaded">
-        Languages:
-        <span v-text="github.languages"></span> in
-        <a v-attr="href: github.url"><span v-text="github.repos.length"></span> repositories</a>
-      </div>
-      <h3><a v-attr="href: github.url">GitHub Top 5</a></h3>
-      <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-2" v-repeat="github.repos | orderBy 'stargazers_count' -1 | head 5">
-          <div class="thumbnail">
-            <a v-attr="href: html_url">
-              <div class="caption">
-                <span class="badge"><span v-text="stargazers_count"></span> &star;</span>
-                <h4 v-text="name"></h4>
-                <p v-text="description"></p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <h3>Apps</h3>
-      <div class="row">
-        <div class="col-md-2">
-          <div class="thumbnail">
-            <a href="https://gistnote.github.io">
-              <div class="caption">
-                <h4>Gistnote</h4>
-                <p>Evernote like Gist editor app</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-2">
-          <div class="thumbnail">
-            <a href="https://chrome.google.com/webstore/detail/feeleilgbmkkpapllljmclmbeddcdeeh">
-              <div class="caption">
-                <h4>Bookmarks in New Tab Page</h4>
-                <p>Chrome Extension: Replaces the new tab page with tiled bookmarks</p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="fixed-background panorama background-1-travel">
-  <div class="jumbotron">
-    <div class="container text-center">
-      <h2>Traveller</h2>
-    </div>
-  </div>
-</div>
-
-<div class="jumbotron">
-  <div class="container text-center">
-    <p>Visited 47 prefectures in Japan, and 10 countries in World</p>
-    <div class="row">
-      <div class="col-xs-6 col-sm-4 col-md-2" v-repeat="album.photos">
-        <div class="thumbnail">
-          <img v-attr="src: content.src | picasaImage" />
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="jumbotron text-center">
+  <img src="https://avatars0.githubusercontent.com/u/321266?v=3&s=160" width="160" height="160"
+    class="img-thumbnail rounded-circle"/>
+  <h1 class="display-4">Hidetake Iwata</h1>
+  <p class="lead">Software Enginner at Tokyo</p>
 </div>
 
 <div class="container text-center">
-  <p>&copy; Hidetake Iwata</p>
+  <p><a href="https://github.com/int128" class="btn btn-link">GitHub</a></p>
+  <p><a href="https://medium.com/@int128" class="btn btn-link">Medium</a></p>
+  <p><a href="https://int128.hatenablog.com" class="btn btn-link">Hatena Blog</a></p>
+  <p><a href="https://twitter.com/int128" class="btn btn-link">Twitter</a></p>
+  <p><a href="https://www.facebook.com/hidetake.iwata" class="btn btn-link">Facebook</a></p>
+  <p><a href="https://www.linkedin.com/pub/hidetake-iwata/b1/b11/619" class="btn btn-link">LinkedIn</a></p>
 </div>
 
-<script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/vue/0.11.0/vue.min.js"></script>
-<script src="/index.js"></script>
+<div class="jumbotron text-center">
+  &copy; Hidetake Iwata
+</div>
 
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
