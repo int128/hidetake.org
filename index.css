@@ -5,3 +5,7 @@ a {
 a:hover {
   color: inherit;
 }
+
+.jumbotron {
+  background-color: white;
+}
