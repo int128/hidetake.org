@@ -5,51 +5,159 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <title>Hidetake Iwata / 岩田 英丈</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cosmo/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/united/bootstrap.min.css" />
   <style>
     .jumbotron {
       background-color: white;
+      padding-left: 0;
     }
   </style>
 </head>
 
 <body>
-
   <div class="container mt-5">
-    <div class="d-flex flex-row">
-      <div class="p-2">
+    <div class="jumbotron">
+      <div>
         <img src="https://avatars0.githubusercontent.com/u/321266?v=3&s=160" width="160" height="160"
           class="img-thumbnail rounded-circle" />
       </div>
-      <div class="p-2">
-        <h1 class="display-4">Hidetake Iwata</h1>
-        <p class="lead">岩田 英丈</p>
-      </div>
+      <h1 class="display-4">Hidetake Iwata / 岩田 英丈</h1>
+      <p class="lead">
+        A software engineer.
+      </p>
     </div>
 
-    <h2>Bio</h2>
-    <p>
-      Software Engineer at Tokyo.
-    </p>
+    <h2>OSS</h2>
+    <h3>Kubernetes</h3>
+    <ul>
+      <li>
+        <a href="https://github.com/int128/kubelogin">kubelogin</a>
+        -
+        kubectl plugin for Kubernetes OpenID Connect authentication (kubectl oidc-login)
+      </li>
+      <li>
+        <a href="https://github.com/int128/kauthproxy">kauthproxy</a>
+        -
+        kubectl plugin of the authentication proxy to access the Kubernetes Dashboard (kubectl auth-proxy)
+      </li>
+      <li>contributions to <a href="https://github.com/kubernetes/kops">kubernetes/kops</a></li>
+      <li>contributions to <a href="https://github.com/roboll/helmfile">roboll/helmfile</a></li>
+    </ul>
+    <h3>Go</h3>
+    <ul>
+      <li>
+        <a href="https://github.com/int128/oauth2cli">oauth2cli</a>
+        -
+        Go package for OAuth 2.0 authorization in a command line interface (CLI) tool, which allows the simple
+        authorization flow for better UX
+      </li>
+      <li>
+        <a href="https://github.com/int128/transerr">transerr</a>
+        -
+        Rewrite Go error handling between errors, xerrors and pkg/errors using AST transformation
+      </li>
+      <li>
+        <a href="https://github.com/int128/goxzst">goxzst</a>
+        -
+        A command to make cross build, ZIP archives, SHA digests and render templates
+      </li>
+    </ul>
+    <h3>Terraform</h3>
+    <ul>
+      <li>
+        <a href="https://github.com/int128/terraform-aws-nat-instance">terraform-aws-nat-instance</a>
+        -
+        Terraform module to provision a NAT instance using an auto scaling group and spot instance from $1/month
+      </li>
+      <li>
+        contributions to
+        <a href="https://github.com/npalm/terraform-aws-gitlab-runner">npalm/terraform-aws-gitlab-runner</a>
+      </li>
+    </ul>
+    <h3>Gradle</h3>
+    <ul>
+      <li>
+        <a href="https://github.com/int128/gradleupdate">gradleupdate</a>
+        -
+        Automatic Gradle Update Service
+      </li>
+      <li>
+        <a href="https://github.com/int128/gradle-swagger-generator-plugin">gradle-swagger-generator-plugin</a>
+        -
+        Gradle plugin for OpenAPI YAML validation, code generation and API document publishing
+      </li>
+      <li>
+        <a href="https://gradle-ssh-plugin.github.io">gradle-ssh-plugin</a>
+        -
+        Gradle plugin which provides SSH facilities for continuous delivery
+      </li>
+    </ul>
+    <h3>Developer Productivity</h3>
+    <ul>
+      <li>
+        <a href="https://github.com/int128/ghcp">ghcp</a>
+        -
+        A simple command to commit files to a repository using GitHub API without git configuration
+      </li>
+      <li>
+        <a href="https://github.com/int128/httpstub">httpstub</a>
+        -
+        Declarative YAML based HTTP stub server for integration tests such as enterprise external APIs
+      </li>
+      <li>
+        <a href="https://github.com/int128/jira-to-slack">jira-to-slack</a>
+        -
+        Slack/Mattermost Integration for notifying Jira events
+      </li>
+      <li>
+        <a href="https://github.com/int128/slack-docker">slack-docker</a>
+        -
+        Slack/Mattermost Integration for notifying Docker events
+      </li>
+    </ul>
+    <h3>Life Hack</h3>
+    <ul>
+      <li>
+        <a href="https://github.com/int128/bntp">bntp</a>
+        -
+        A chrome extension providing Bookmarks in the New Tab Page
+      </li>
+      <li>
+        <a href="https://github.com/int128/gpup">gpup</a>
+        -
+        A command to upload photos and movies to Google Photos Library using the official Google Photos Library API
+      </li>
+      <li>
+        <a href="https://github.com/int128/amefuriso">amefuriso</a>
+        -
+        Slack bot for notifying rainfall forecast using Yahoo Japan Weather API like 雨雲レーダー
+      </li>
+    </ul>
 
-    <h2>Links</h2>
-    <a href="https://github.com/int128" class="btn btn-link">GitHub</a>
-    |
-    <a href="https://medium.com/@int128" class="btn btn-link">Medium</a>
-    |
-    <a href="https://int128.hatenablog.com" class="btn btn-link">Hatena Blog</a>
-    |
-    <a href="https://speakerdeck.com/int128" class="btn btn-link">Speaker Deck</a>
-    |
-    <a href="https://twitter.com/int128" class="btn btn-link">Twitter</a>
-    |
-    <a href="https://www.facebook.com/hidetake.iwata" class="btn btn-link">Facebook</a>
-    |
-    <a href="https://www.linkedin.com/pub/hidetake-iwata/b1/b11/619" class="btn btn-link">LinkedIn</a>
+    <h2>Certificates</h2>
+    <ul>
+      <li>SAFe 4 Agilist, 2018</li>
+      <li>Certified Scrum Product Owner, 2018</li>
+      <li>Certified Scrum Master, 2014</li>
+      <li>IPA System Architect, 2012</li>
+      <li>IPA Technical Architect (Security), 2007</li>
+      <li>IPA Technical Architect (Network), 2003</li>
+    </ul>
+
+    <h2>Contact me</h2>
+    <div>
+      <a href="https://github.com/int128" class="btn btn-light">GitHub</a>
+      <a href="https://medium.com/@int128" class="btn btn-light">Medium</a>
+      <a href="https://int128.hatenablog.com" class="btn btn-light">Hatena Blog</a>
+      <a href="https://speakerdeck.com/int128" class="btn btn-light">Speaker Deck</a>
+      <a href="https://twitter.com/int128" class="btn btn-light">Twitter</a>
+      <a href="https://www.facebook.com/hidetake.iwata" class="btn btn-light">Facebook</a>
+      <a href="https://www.linkedin.com/pub/hidetake-iwata/b1/b11/619" class="btn btn-light">LinkedIn</a>
+    </div>
   </div>
 
-  <div class="container text-center mt-5">
-    &copy; Hidetake Iwata
+  <div class="container mt-5 mb-5">
+    hidetake.org &copy; Hidetake Iwata, 2007 - 2019
   </div>
 
   <script>
